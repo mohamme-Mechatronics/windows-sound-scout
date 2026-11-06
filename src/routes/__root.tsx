@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { LanguageRuntime } from "@/lib/i18n";
 import { ClickSoundRuntime } from "@/lib/click-sound";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { startOffline } from "@/lib/offline";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +128,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => { void startOffline().catch(() => {}); }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

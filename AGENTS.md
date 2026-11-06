@@ -33,3 +33,4 @@ use the editor.
 - Preserve ACTES page routes and calculator modules on TanStack Start; keep the target framework versions pinned for deployment compatibility.
 - Store orders and notifications in Cloud with server-validated order capabilities and server-only administration checks; never authorize private reads using a phone number alone.
 - Externalize imported media using asset pointers and a shared path resolver; stream complete videos on demand instead of preloading the entire catalog.
+- Offline support uses generateSW with one preview-guarded registrar; cache only public pages and opened media, never auth/API responses, and save complete media GETs for range playback.
