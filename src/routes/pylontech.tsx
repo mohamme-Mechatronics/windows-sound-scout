@@ -10,7 +10,8 @@ import { PylontechNav } from "@/components/pylontech-nav";
 import { useResolvedVideoSrc } from "@/lib/video-source";
 import actesLogoAsset from "@/assets/imported/src/assets/actes-logo-full.webp.asset.json";
 const actesLogo = actesLogoAsset.url;
-import resBess from "@/assets/pylon/residential-bess.webp";
+import resBessAsset from "@/assets/imported/src/assets/pylon/residential-bess.webp.asset.json";
+const resBess = resBessAsset.url;
 import { BUSINESS_EMAIL, BUSINESS_PHONE, BUSINESS_WHATSAPP } from "@/lib/contact";
 
 export const Route = createFileRoute("/pylontech")({
