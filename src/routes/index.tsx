@@ -1,8 +1,10 @@
 import { LoadPdfImport } from "@/components/load-pdf-import";
 import { useCorporateMode } from "@/lib/corporate-mode";
 import { createFileRoute } from "@tanstack/react-router";
-import actesLogo from "@/assets/actes-logo-full.webp";
-import actesLogoWhite from "@/assets/actes-logo-white.webp";
+import actesLogoAsset from "@/assets/imported/src/assets/actes-logo-full.webp.asset.json";
+const actesLogo = actesLogoAsset.url;
+import actesLogoWhiteAsset from "@/assets/imported/src/assets/actes-logo-white.webp.asset.json";
+const actesLogoWhite = actesLogoWhiteAsset.url;
 import { useLang, type Lang } from "@/lib/i18n";
 import { SoundToggle } from "@/lib/click-sound";
 import { prepareSpeech, prepareWelcome, quoteSpeech, replaySpeech, respeakScreen, setScreenSpeech, setScreenSpeechSilently, silenceNextScreen, speakScreen, speakWelcome, studySpeech, stopSpeaking, unlockVoice, viewSpeech } from "@/lib/voice-guide";
@@ -17,9 +19,12 @@ import { applyVariantToSldParams, applyVariantToStudyParams, buildVariants, type
 
 
 import { enterFullscreen, isFullscreen, toggleFullscreen } from "@/lib/fullscreen";
-import actesSplashLogo from "@/assets/actes-logo-white.webp";
-import startBgMobile from "@/assets/start-bg-mobile.webp";
-import startBgDesktop from "@/assets/start-bg-desktop.webp";
+import actesSplashLogoAsset from "@/assets/imported/src/assets/actes-logo-white.webp.asset.json";
+const actesSplashLogo = actesSplashLogoAsset.url;
+import startBgMobileAsset from "@/assets/imported/src/assets/start-bg-mobile.webp.asset.json";
+const startBgMobile = startBgMobileAsset.url;
+import startBgDesktopAsset from "@/assets/imported/src/assets/start-bg-desktop.webp.asset.json";
+const startBgDesktop = startBgDesktopAsset.url;
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
@@ -71,22 +76,35 @@ import {
   Users,
   Factory,
 } from "lucide-react";
-import residentialImage from "@/assets/actes-residential.webp";
-import commercialImage from "@/assets/actes-commercial.webp";
-import industrialImage from "@/assets/actes-industrial.webp";
-import agricultureImage from "@/assets/actes-agriculture.webp";
-import homeHero from "@/assets/actes-home-hero.webp";
-import partnersStrip from "@/assets/partners-strip.webp";
+import residentialImageAsset from "@/assets/imported/src/assets/actes-residential.webp.asset.json";
+const residentialImage = residentialImageAsset.url;
+import commercialImageAsset from "@/assets/imported/src/assets/actes-commercial.webp.asset.json";
+const commercialImage = commercialImageAsset.url;
+import industrialImageAsset from "@/assets/imported/src/assets/actes-industrial.webp.asset.json";
+const industrialImage = industrialImageAsset.url;
+import agricultureImageAsset from "@/assets/imported/src/assets/actes-agriculture.webp.asset.json";
+const agricultureImage = agricultureImageAsset.url;
+import homeHeroAsset from "@/assets/imported/src/assets/actes-home-hero.webp.asset.json";
+const homeHero = homeHeroAsset.url;
+import partnersStripAsset from "@/assets/imported/src/assets/partners-strip.webp.asset.json";
+const partnersStrip = partnersStripAsset.url;
 
-import refCardQuote from "@/assets/card-quote.webp";
-import refCardEnergy from "@/assets/card-energy.webp";
-import refCardSupport from "@/assets/card-support.webp";
-import refCardProducts from "@/assets/card-products.webp";
+import refCardQuoteAsset from "@/assets/imported/src/assets/card-quote.webp.asset.json";
+const refCardQuote = refCardQuoteAsset.url;
+import refCardEnergyAsset from "@/assets/imported/src/assets/card-energy.webp.asset.json";
+const refCardEnergy = refCardEnergyAsset.url;
+import refCardSupportAsset from "@/assets/imported/src/assets/card-support.webp.asset.json";
+const refCardSupport = refCardSupportAsset.url;
+import refCardProductsAsset from "@/assets/imported/src/assets/card-products.webp.asset.json";
+const refCardProducts = refCardProductsAsset.url;
 import ProductsCatalog from "@/components/products-catalog";
 
-import actesAvatar from "@/assets/actes-a-mark.webp";
-import actesMark from "@/assets/actes-a-mark.webp";
-import actesWordmark from "@/assets/actes-logo-full.webp";
+import actesAvatarAsset from "@/assets/imported/src/assets/actes-a-mark.webp.asset.json";
+const actesAvatar = actesAvatarAsset.url;
+import actesMarkAsset from "@/assets/imported/src/assets/actes-a-mark.webp.asset.json";
+const actesMark = actesMarkAsset.url;
+import actesWordmarkAsset from "@/assets/imported/src/assets/actes-logo-full.webp.asset.json";
+const actesWordmark = actesWordmarkAsset.url;
 
 import { findCatalogProductForSpec, type Product as CatalogProduct } from "@/lib/products-data";
 import { officialCatalogUrl } from "@/lib/official-catalogs";

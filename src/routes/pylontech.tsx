@@ -8,7 +8,8 @@ import { PYLON_SOLUTIONS } from "@/lib/pylontech-solutions";
 import { PylontechSolution } from "@/components/pylontech-solution";
 import { PylontechNav } from "@/components/pylontech-nav";
 import { useResolvedVideoSrc } from "@/lib/video-source";
-import actesLogo from "@/assets/actes-logo-full.webp";
+import actesLogoAsset from "@/assets/imported/src/assets/actes-logo-full.webp.asset.json";
+const actesLogo = actesLogoAsset.url;
 import resBess from "@/assets/pylon/residential-bess.webp";
 import { BUSINESS_EMAIL, BUSINESS_PHONE, BUSINESS_WHATSAPP } from "@/lib/contact";
 

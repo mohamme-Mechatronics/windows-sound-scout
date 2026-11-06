@@ -9,9 +9,12 @@ import {
   type Notif,
 } from "@/lib/orders";
 import { money } from "@/lib/present";
-import confirmedImage from "@/assets/admin-confirmed.webp";
-import cancelledImage from "@/assets/admin-cancelled.webp";
-import pendingImage from "@/assets/admin-pending.webp";
+import confirmedImageAsset from "@/assets/imported/src/assets/admin-confirmed.webp.asset.json";
+const confirmedImage = confirmedImageAsset.url;
+import cancelledImageAsset from "@/assets/imported/src/assets/admin-cancelled.webp.asset.json";
+const cancelledImage = cancelledImageAsset.url;
+import pendingImageAsset from "@/assets/imported/src/assets/admin-pending.webp.asset.json";
+const pendingImage = pendingImageAsset.url;
 
 type BucketId = "confirmed" | "cancelled" | "pending";
 

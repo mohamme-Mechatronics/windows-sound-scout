@@ -1,5 +1,6 @@
 import { BadgeCheck, FileText, Download, ShieldCheck, Wrench, ClipboardCheck, Headphones, Sun, Cpu, BatteryCharging, Home } from "lucide-react";
-import actesLogo from "@/assets/actes-logo-full.webp";
+import actesLogoAsset from "@/assets/imported/src/assets/actes-logo-full.webp.asset.json";
+const actesLogo = actesLogoAsset.url;
 import { PRODUCTS } from "@/lib/products-data";
 
 type BrandKey = "suntech" | "pylontech" | "hithium" | "lipower";

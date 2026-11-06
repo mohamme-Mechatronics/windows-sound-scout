@@ -100,9 +100,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       // الخطوط مضمّنة داخل التطبيق حتى يعمل بالكامل دون إنترنت.
       { rel: "stylesheet", href: "/fonts/fonts.css" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "/__l5e/assets-v1/b94af02a-562f-434b-86ff-d728dc9f5b8e/favicon.png", type: "image/png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "apple-touch-icon", href: "/__l5e/assets-v1/581555c3-0c6f-4d05-8ff5-4945cbe9e338/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
