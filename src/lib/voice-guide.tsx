@@ -12,12 +12,9 @@ let aiBlocked = false;
 let playbackDone: Promise<void> = Promise.resolve();
 let finishPlayback: (() => void) | null = null;
 
-/** الصوت مخصص لنسخة ويندوز/سطح المكتب فقط؛ يُعطَّل تماماً على الأندرويد والهواتف. */
+/** The guide is available in browsers on phones and desktops. */
 export function isVoicePlatform() {
-  if (typeof navigator === "undefined") return false;
-  const ua = navigator.userAgent || "";
-  if (/Android|iPhone|iPad|iPod|Mobile|wv\)/i.test(ua)) return false;
-  return true;
+  return typeof window !== "undefined" && typeof Audio !== "undefined";
 }
 
 export function isVoiceOn() {
@@ -258,11 +255,12 @@ let unlocked = false;
 /** يفكّ حظر تشغيل الصوت في المتصفح عند أول تفاعل من المستخدم. */
 export function unlockVoice() {
   if (unlocked || typeof window === "undefined" || !isVoicePlatform()) return;
-  unlocked = true;
   const el = player();
   if (el.src) return;
+  // A real silent WAV unlocks the persistent player on touch browsers.
+  el.src = "data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAAAAA==";
   el.muted = true;
-  void el.play().then(() => { el.pause(); el.muted = false; }).catch(() => { el.muted = false; });
+  void el.play().then(() => { unlocked = true; el.pause(); el.muted = false; }).catch(() => { el.muted = false; el.removeAttribute("src"); });
 }
 
 /** آخر نص منطوق، لإعادة سماعه بزر «إعادة السماع» في أي شاشة. */
