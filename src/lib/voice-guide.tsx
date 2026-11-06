@@ -194,6 +194,10 @@ async function loadAudio(text: string, lang: Lang, background = false) {
   const local = await staticAudio(text, lang);
   if (local) return local;
 
+  // Background preparation must not flood paid speech generation or compete
+  // with the user's current screen. Generate missing phrases on demand only.
+  if (background) return null;
+
   // صوت الشاشة المعروضة يأخذ أولوية عالية في طابور الشبكة،
   // والتحضير في الخلفية يأخذ أولوية منخفضة حتى لا يزاحمه.
   const r = await fetch("/api/tts", {

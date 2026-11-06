@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
-import { stopSpeaking } from "@/lib/voice-guide";
+import { setVoiceOn, stopSpeaking, unlockVoice } from "@/lib/voice-guide";
 
 const STORAGE_KEY = "actes-click-sound";
 
@@ -32,6 +32,8 @@ export function SoundToggle({ className = "" }: { className?: string }) {
   const toggle = () => {
     const next = !on;
     setOn(next);
+    setVoiceOn(next);
+    if (next) unlockVoice();
     try {
       localStorage.setItem(STORAGE_KEY, next ? "on" : "off");
     } catch {
