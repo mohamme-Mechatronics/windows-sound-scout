@@ -16,6 +16,13 @@ import { Route as LipowerRouteImport } from './routes/lipower'
 import { Route as PylontechRouteImport } from './routes/pylontech'
 import { Route as SuntechRouteImport } from './routes/suntech'
 import { Route as ApiTtsRouteImport } from './routes/api/tts'
+import { Route as AudioSplatRouteImport } from './routes/audio.$'
+import { Route as BrandSplatRouteImport } from './routes/brand.$'
+import { Route as CatalogsSplatRouteImport } from './routes/catalogs.$'
+import { Route as DownloadsSplatRouteImport } from './routes/downloads.$'
+import { Route as FontsSplatRouteImport } from './routes/fonts.$'
+import { Route as MediaSplatRouteImport } from './routes/media.$'
+import { Route as VideosSplatRouteImport } from './routes/videos.$'
 import { Route as ApiPublicOrdersRouteImport } from './routes/api/public/orders'
 import { Route as ApiPublicWaInvoiceRouteImport } from './routes/api/public/wa-invoice'
 
@@ -54,6 +61,41 @@ const ApiTtsRoute = ApiTtsRouteImport.update({
   path: '/api/tts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AudioSplatRoute = AudioSplatRouteImport.update({
+  id: '/audio/$',
+  path: '/audio/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandSplatRoute = BrandSplatRouteImport.update({
+  id: '/brand/$',
+  path: '/brand/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogsSplatRoute = CatalogsSplatRouteImport.update({
+  id: '/catalogs/$',
+  path: '/catalogs/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsSplatRoute = DownloadsSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => DownloadsRoute,
+} as any)
+const FontsSplatRoute = FontsSplatRouteImport.update({
+  id: '/fonts/$',
+  path: '/fonts/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaSplatRoute = MediaSplatRouteImport.update({
+  id: '/media/$',
+  path: '/media/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideosSplatRoute = VideosSplatRouteImport.update({
+  id: '/videos/$',
+  path: '/videos/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicOrdersRoute = ApiPublicOrdersRouteImport.update({
   id: '/api/public/orders',
   path: '/api/public/orders',
@@ -67,35 +109,56 @@ const ApiPublicWaInvoiceRoute = ApiPublicWaInvoiceRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRoute
+  '/downloads': typeof DownloadsRouteWithChildren
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
   '/suntech': typeof SuntechRoute
   '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads/$': typeof DownloadsSplatRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
   '/api/public/orders': typeof ApiPublicOrdersRoute
   '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRoute
+  '/downloads': typeof DownloadsRouteWithChildren
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
   '/suntech': typeof SuntechRoute
   '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads/$': typeof DownloadsSplatRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
   '/api/public/orders': typeof ApiPublicOrdersRoute
   '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRoute
+  '/downloads': typeof DownloadsRouteWithChildren
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
   '/suntech': typeof SuntechRoute
   '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads/$': typeof DownloadsSplatRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
   '/api/public/orders': typeof ApiPublicOrdersRoute
   '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
@@ -109,6 +172,13 @@ export interface FileRouteTypes {
     | '/pylontech'
     | '/suntech'
     | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads/$'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
     | '/api/public/orders'
     | '/api/public/wa-invoice'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +190,13 @@ export interface FileRouteTypes {
     | '/pylontech'
     | '/suntech'
     | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads/$'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
     | '/api/public/orders'
     | '/api/public/wa-invoice'
   id:
@@ -131,18 +208,31 @@ export interface FileRouteTypes {
     | '/pylontech'
     | '/suntech'
     | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads/$'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
     | '/api/public/orders'
     | '/api/public/wa-invoice'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DownloadsRoute: typeof DownloadsRoute
+  DownloadsRoute: typeof DownloadsRouteWithChildren
   HithiumRoute: typeof HithiumRoute
   LipowerRoute: typeof LipowerRoute
   PylontechRoute: typeof PylontechRoute
   SuntechRoute: typeof SuntechRoute
   ApiTtsRoute: typeof ApiTtsRoute
+  AudioSplatRoute: typeof AudioSplatRoute
+  BrandSplatRoute: typeof BrandSplatRoute
+  CatalogsSplatRoute: typeof CatalogsSplatRoute
+  FontsSplatRoute: typeof FontsSplatRoute
+  MediaSplatRoute: typeof MediaSplatRoute
+  VideosSplatRoute: typeof VideosSplatRoute
   ApiPublicOrdersRoute: typeof ApiPublicOrdersRoute
   ApiPublicWaInvoiceRoute: typeof ApiPublicWaInvoiceRoute
 }
@@ -198,6 +288,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiTtsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audio/$': {
+      id: '/audio/$'
+      path: '/audio/$'
+      fullPath: '/audio/$'
+      preLoaderRoute: typeof AudioSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand/$': {
+      id: '/brand/$'
+      path: '/brand/$'
+      fullPath: '/brand/$'
+      preLoaderRoute: typeof BrandSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogs/$': {
+      id: '/catalogs/$'
+      path: '/catalogs/$'
+      fullPath: '/catalogs/$'
+      preLoaderRoute: typeof CatalogsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads/$': {
+      id: '/downloads/$'
+      path: '/$'
+      fullPath: '/downloads/$'
+      preLoaderRoute: typeof DownloadsSplatRouteImport
+      parentRoute: typeof DownloadsRoute
+    }
+    '/fonts/$': {
+      id: '/fonts/$'
+      path: '/fonts/$'
+      fullPath: '/fonts/$'
+      preLoaderRoute: typeof FontsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/$': {
+      id: '/media/$'
+      path: '/media/$'
+      fullPath: '/media/$'
+      preLoaderRoute: typeof MediaSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videos/$': {
+      id: '/videos/$'
+      path: '/videos/$'
+      fullPath: '/videos/$'
+      preLoaderRoute: typeof VideosSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/orders': {
       id: '/api/public/orders'
       path: '/api/public/orders'
@@ -215,14 +354,32 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface DownloadsRouteChildren {
+  DownloadsSplatRoute: typeof DownloadsSplatRoute
+}
+
+const DownloadsRouteChildren: DownloadsRouteChildren = {
+  DownloadsSplatRoute: DownloadsSplatRoute,
+}
+
+const DownloadsRouteWithChildren = DownloadsRoute._addFileChildren(
+  DownloadsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DownloadsRoute: DownloadsRoute,
+  DownloadsRoute: DownloadsRouteWithChildren,
   HithiumRoute: HithiumRoute,
   LipowerRoute: LipowerRoute,
   PylontechRoute: PylontechRoute,
   SuntechRoute: SuntechRoute,
   ApiTtsRoute: ApiTtsRoute,
+  AudioSplatRoute: AudioSplatRoute,
+  BrandSplatRoute: BrandSplatRoute,
+  CatalogsSplatRoute: CatalogsSplatRoute,
+  FontsSplatRoute: FontsSplatRoute,
+  MediaSplatRoute: MediaSplatRoute,
+  VideosSplatRoute: VideosSplatRoute,
   ApiPublicOrdersRoute: ApiPublicOrdersRoute,
   ApiPublicWaInvoiceRoute: ApiPublicWaInvoiceRoute,
 }
