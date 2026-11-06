@@ -2,6 +2,7 @@ import { currentLang, translateText, type Lang } from "@/lib/i18n";
 import { prepareArabicSpeech } from "@/lib/ar-lexicon";
 import { MANY_OPTIONS, OPTIONS_WORD, SCRIPTS, WELCOME } from "@/lib/voice-scripts";
 import { buildPvsystStudy } from "@/lib/pvsyst-engine";
+import { resolveMedia } from "@/lib/media";
 
 
 const VOICE_KEY = "actes-voice";
@@ -174,7 +175,7 @@ async function staticAudio(text: string, lang: Lang): Promise<string | null> {
     .then((list: string[]) => new Set(list))
     .catch(() => new Set<string>());
   const key = `${lang}-${textHash(text)}`;
-  return (await audioIndex).has(key) ? `/audio/${key}.mp3` : null;
+  return (await audioIndex).has(key) ? resolveMedia(`/audio/${key}.mp3`) : null;
 }
 
 async function loadAudio(text: string, lang: Lang, background = false) {
@@ -264,7 +265,15 @@ export function unlockVoice() {
   // A real silent WAV unlocks the persistent player on touch browsers.
   el.src = "data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAAAAA==";
   el.muted = true;
-  void el.play().then(() => { unlocked = true; el.pause(); el.muted = false; }).catch(() => { el.muted = false; el.removeAttribute("src"); });
+  // Never clear or pause a newer source if the welcome phrase replaced the
+  // silent clip while its play promise was still pending.
+  const silentSource = el.src;
+  void el.play().then(() => {
+    unlocked = true;
+    if (el.src === silentSource) { el.pause(); el.muted = false; }
+  }).catch(() => {
+    if (el.src === silentSource) el.muted = false;
+  });
 }
 
 /** آخر نص منطوق، لإعادة سماعه بزر «إعادة السماع» في أي شاشة. */
