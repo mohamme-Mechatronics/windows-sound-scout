@@ -110,16 +110,8 @@ export const pullClientOrders = createServerFn({ method: "POST" })
     const supabase = await db();
     const byId = new Map<string, AnyPayload>();
 
-    // حساب العميل هو رقمه: نجلب كل الطلبات المسجلة على نفس الرقم.
-    if (data.phone) {
-      const phoneRes = await supabase
-        .from("orders")
-        .select("id, payload")
-        .eq("payload->>clientPhone", data.phone)
-        .limit(500);
-      if (phoneRes.error) throw new Error(phoneRes.error.message);
-      (phoneRes.data ?? []).forEach((row) => byId.set(String((row as Row).id), (row as Row).payload));
-    }
+    // Phone numbers identify customers but do not prove ownership.
+    // Only matched per-order access tokens authorize private reads.
 
     // الطلبات المحفوظة على هذا الجهاز: تُطابَق برمز الوصول الخاص بها.
     const items = data.items.filter((item) => item.id && item.token);
