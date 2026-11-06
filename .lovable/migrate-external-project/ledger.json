@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/mohamme-Mechatronics/hsolar-actes",
+  "capabilities": [
+    {"capability":"application code and routes","source":"GitHub","outcome":"migrate","status":"in_progress","next_action":"Preserve source screens and verify browser flows"},
+    {"capability":"media bytes","source":"public and src assets","outcome":"preserve","status":"in_progress","next_action":"Upload media to project CDN"},
+    {"capability":"schema","source":"orders and notifications migrations","outcome":"migrate","status":"pending","next_action":"Inspect actual call sites and enable Cloud"},
+    {"capability":"existing records","source":"no export supplied","outcome":"migrate","status":"pending","next_action":"Request filtered record export after preview"},
+    {"capability":"auth identities and authorization","source":"under inspection","outcome":"migrate","status":"pending","next_action":"Inspect identity and admin access"},
+    {"capability":"external providers and secrets","source":"under inspection","outcome":"preserve","status":"pending","next_action":"Inspect integrations"},
+    {"capability":"endpoints callbacks webhooks schedules","source":"src/routes/api","outcome":"preserve","status":"pending","next_action":"Inspect public callers"},
+    {"capability":"cutover and verification","source":"current project","outcome":"publish","status":"pending","next_action":"Verify browser and scan security before publication"}
+  ]
+}
