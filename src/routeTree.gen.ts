@@ -19,7 +19,7 @@ import { Route as ApiTtsRouteImport } from './routes/api/tts'
 import { Route as AudioSplatRouteImport } from './routes/audio.$'
 import { Route as BrandSplatRouteImport } from './routes/brand.$'
 import { Route as CatalogsSplatRouteImport } from './routes/catalogs.$'
-import { Route as DownloadsSplatRouteImport } from './routes/downloads.$'
+import { Route as DownloadsACTESWindowsX64DotzipRouteImport } from './routes/downloads_.ACTES-windows-x64[.]zip'
 import { Route as FontsSplatRouteImport } from './routes/fonts.$'
 import { Route as MediaSplatRouteImport } from './routes/media.$'
 import { Route as VideosSplatRouteImport } from './routes/videos.$'
@@ -76,11 +76,12 @@ const CatalogsSplatRoute = CatalogsSplatRouteImport.update({
   path: '/catalogs/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DownloadsSplatRoute = DownloadsSplatRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => DownloadsRoute,
-} as any)
+const DownloadsACTESWindowsX64DotzipRoute =
+  DownloadsACTESWindowsX64DotzipRouteImport.update({
+    id: '/downloads_/ACTES-windows-x64.zip',
+    path: '/downloads/ACTES-windows-x64.zip',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FontsSplatRoute = FontsSplatRouteImport.update({
   id: '/fonts/$',
   path: '/fonts/$',
@@ -109,7 +110,7 @@ const ApiPublicWaInvoiceRoute = ApiPublicWaInvoiceRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRouteWithChildren
+  '/downloads': typeof DownloadsRoute
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
@@ -118,7 +119,7 @@ export interface FileRoutesByFullPath {
   '/audio/$': typeof AudioSplatRoute
   '/brand/$': typeof BrandSplatRoute
   '/catalogs/$': typeof CatalogsSplatRoute
-  '/downloads/$': typeof DownloadsSplatRoute
+  '/downloads/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
   '/fonts/$': typeof FontsSplatRoute
   '/media/$': typeof MediaSplatRoute
   '/videos/$': typeof VideosSplatRoute
@@ -127,7 +128,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRouteWithChildren
+  '/downloads': typeof DownloadsRoute
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
@@ -136,7 +137,7 @@ export interface FileRoutesByTo {
   '/audio/$': typeof AudioSplatRoute
   '/brand/$': typeof BrandSplatRoute
   '/catalogs/$': typeof CatalogsSplatRoute
-  '/downloads/$': typeof DownloadsSplatRoute
+  '/downloads/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
   '/fonts/$': typeof FontsSplatRoute
   '/media/$': typeof MediaSplatRoute
   '/videos/$': typeof VideosSplatRoute
@@ -146,7 +147,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/downloads': typeof DownloadsRouteWithChildren
+  '/downloads': typeof DownloadsRoute
   '/hithium': typeof HithiumRoute
   '/lipower': typeof LipowerRoute
   '/pylontech': typeof PylontechRoute
@@ -155,7 +156,7 @@ export interface FileRoutesById {
   '/audio/$': typeof AudioSplatRoute
   '/brand/$': typeof BrandSplatRoute
   '/catalogs/$': typeof CatalogsSplatRoute
-  '/downloads/$': typeof DownloadsSplatRoute
+  '/downloads_/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
   '/fonts/$': typeof FontsSplatRoute
   '/media/$': typeof MediaSplatRoute
   '/videos/$': typeof VideosSplatRoute
@@ -175,7 +176,7 @@ export interface FileRouteTypes {
     | '/audio/$'
     | '/brand/$'
     | '/catalogs/$'
-    | '/downloads/$'
+    | '/downloads/ACTES-windows-x64.zip'
     | '/fonts/$'
     | '/media/$'
     | '/videos/$'
@@ -193,7 +194,7 @@ export interface FileRouteTypes {
     | '/audio/$'
     | '/brand/$'
     | '/catalogs/$'
-    | '/downloads/$'
+    | '/downloads/ACTES-windows-x64.zip'
     | '/fonts/$'
     | '/media/$'
     | '/videos/$'
@@ -211,7 +212,7 @@ export interface FileRouteTypes {
     | '/audio/$'
     | '/brand/$'
     | '/catalogs/$'
-    | '/downloads/$'
+    | '/downloads_/ACTES-windows-x64.zip'
     | '/fonts/$'
     | '/media/$'
     | '/videos/$'
@@ -221,7 +222,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DownloadsRoute: typeof DownloadsRouteWithChildren
+  DownloadsRoute: typeof DownloadsRoute
   HithiumRoute: typeof HithiumRoute
   LipowerRoute: typeof LipowerRoute
   PylontechRoute: typeof PylontechRoute
@@ -230,6 +231,7 @@ export interface RootRouteChildren {
   AudioSplatRoute: typeof AudioSplatRoute
   BrandSplatRoute: typeof BrandSplatRoute
   CatalogsSplatRoute: typeof CatalogsSplatRoute
+  DownloadsACTESWindowsX64DotzipRoute: typeof DownloadsACTESWindowsX64DotzipRoute
   FontsSplatRoute: typeof FontsSplatRoute
   MediaSplatRoute: typeof MediaSplatRoute
   VideosSplatRoute: typeof VideosSplatRoute
@@ -309,12 +311,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatalogsSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/downloads/$': {
-      id: '/downloads/$'
-      path: '/$'
-      fullPath: '/downloads/$'
-      preLoaderRoute: typeof DownloadsSplatRouteImport
-      parentRoute: typeof DownloadsRoute
+    '/downloads_/ACTES-windows-x64.zip': {
+      id: '/downloads_/ACTES-windows-x64.zip'
+      path: '/downloads/ACTES-windows-x64.zip'
+      fullPath: '/downloads/ACTES-windows-x64.zip'
+      preLoaderRoute: typeof DownloadsACTESWindowsX64DotzipRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/fonts/$': {
       id: '/fonts/$'
@@ -354,21 +356,9 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface DownloadsRouteChildren {
-  DownloadsSplatRoute: typeof DownloadsSplatRoute
-}
-
-const DownloadsRouteChildren: DownloadsRouteChildren = {
-  DownloadsSplatRoute: DownloadsSplatRoute,
-}
-
-const DownloadsRouteWithChildren = DownloadsRoute._addFileChildren(
-  DownloadsRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DownloadsRoute: DownloadsRouteWithChildren,
+  DownloadsRoute: DownloadsRoute,
   HithiumRoute: HithiumRoute,
   LipowerRoute: LipowerRoute,
   PylontechRoute: PylontechRoute,
@@ -377,6 +367,7 @@ const rootRouteChildren: RootRouteChildren = {
   AudioSplatRoute: AudioSplatRoute,
   BrandSplatRoute: BrandSplatRoute,
   CatalogsSplatRoute: CatalogsSplatRoute,
+  DownloadsACTESWindowsX64DotzipRoute: DownloadsACTESWindowsX64DotzipRoute,
   FontsSplatRoute: FontsSplatRoute,
   MediaSplatRoute: MediaSplatRoute,
   VideosSplatRoute: VideosSplatRoute,
