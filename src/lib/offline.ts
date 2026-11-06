@@ -43,5 +43,10 @@ export async function startOffline() {
   });
   // Cache the public entry document after worker activation; private API
   // responses and POST requests are deliberately never cached.
-  if (navigator.onLine) void fetch("/", { credentials: "omit" }).catch(() => {});
+  if (navigator.onLine) {
+    void (async () => {
+      const response = await fetch("/", { credentials: "omit" });
+      if (response.status === 200) await (await caches.open("actes-public-pages-v1")).put(new URL("/", location.origin).href, response);
+    })().catch(() => {});
+  }
 }
