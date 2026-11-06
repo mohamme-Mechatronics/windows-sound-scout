@@ -1,7 +1,8 @@
 # Import and publish ACTES
 - [x] Add progressive offline saving and Android web installation; test saved audio without connection and preview worker exclusion.
 - [ ] Verify published offline reload and opened video/PDF: requires deployment of the new worker.
-- [ ] Supply Android APK tied to published site, with complete public content saved locally; verify signed package and offline bytes.
+- [x] Supply Android APK tied to published site; signed, installed and launched in test Android; offline storage logic tested on audio and home page.
+- [ ] Confirm APK offline reopen on a real phone: user device test.
 - [x] Import complete application and externalize media.
 - [x] Preserve Cloud order store and speech integration; verify one UI write.
 - [x] Enable mobile voice guide; verify product narration/video and desktop quote flow.
