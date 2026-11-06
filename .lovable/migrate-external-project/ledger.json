@@ -1,0 +1,61 @@
+{
+  "source": "https://github.com/mohamme-Mechatronics/hsolar-actes",
+  "capabilities": [
+    {
+      "capability": "application code and routes",
+      "source": "GitHub",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "Main quote flow, product gallery and six content pages verified"
+    },
+    {
+      "capability": "media bytes",
+      "source": "public and src assets",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "561 asset pointers imported; prerecorded narration and product video playback verified"
+    },
+    {
+      "capability": "schema",
+      "source": "orders and notifications migrations",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "Orders and notifications created in Cloud; real UI sales order total 220 read back and test row removed"
+    },
+    {
+      "capability": "existing records",
+      "source": "no export supplied",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Attach orders and notifications CSV/JSON exports; current preview has no original records"
+    },
+    {
+      "capability": "auth identities and authorization",
+      "source": "under inspection",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Source has no Cloud Auth accounts; original customer phone-only lookup removed for privacy. Admin password must be supplied securely; cross-device history needs verified identity"
+    },
+    {
+      "capability": "external providers and secrets",
+      "source": "under inspection",
+      "outcome": "preserve",
+      "status": "pending",
+      "next_action": "Lovable speech preserved and WAV generation verified. ADMIN_PASSWORD required for admin operations"
+    },
+    {
+      "capability": "endpoints callbacks webhooks schedules",
+      "source": "src/routes/api",
+      "outcome": "preserve",
+      "status": "preserved",
+      "next_action": "Desktop orders and invoice endpoints retained; original desktop cloud URL cutover must be updated separately. No external messaging or schedules detected"
+    },
+    {
+      "capability": "cutover and verification",
+      "source": "current project",
+      "outcome": "publish",
+      "status": "ready_to_publish",
+      "next_action": "Basic security checks passed, 10 tests passed, quote submission and mobile product narration/video verified; device speaker and iOS testing remains user verification"
+    }
+  ]
+}

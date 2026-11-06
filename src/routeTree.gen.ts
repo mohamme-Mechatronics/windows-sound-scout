@@ -10,33 +10,233 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as HithiumRouteImport } from './routes/hithium'
+import { Route as LipowerRouteImport } from './routes/lipower'
+import { Route as PylontechRouteImport } from './routes/pylontech'
+import { Route as SuntechRouteImport } from './routes/suntech'
+import { Route as ApiTtsRouteImport } from './routes/api/tts'
+import { Route as AudioSplatRouteImport } from './routes/audio.$'
+import { Route as BrandSplatRouteImport } from './routes/brand.$'
+import { Route as CatalogsSplatRouteImport } from './routes/catalogs.$'
+import { Route as DownloadsACTESWindowsX64DotzipRouteImport } from './routes/downloads_.ACTES-windows-x64[.]zip'
+import { Route as FontsSplatRouteImport } from './routes/fonts.$'
+import { Route as MediaSplatRouteImport } from './routes/media.$'
+import { Route as VideosSplatRouteImport } from './routes/videos.$'
+import { Route as ApiPublicOrdersRouteImport } from './routes/api/public/orders'
+import { Route as ApiPublicWaInvoiceRouteImport } from './routes/api/public/wa-invoice'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HithiumRoute = HithiumRouteImport.update({
+  id: '/hithium',
+  path: '/hithium',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LipowerRoute = LipowerRouteImport.update({
+  id: '/lipower',
+  path: '/lipower',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PylontechRoute = PylontechRouteImport.update({
+  id: '/pylontech',
+  path: '/pylontech',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuntechRoute = SuntechRouteImport.update({
+  id: '/suntech',
+  path: '/suntech',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTtsRoute = ApiTtsRouteImport.update({
+  id: '/api/tts',
+  path: '/api/tts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AudioSplatRoute = AudioSplatRouteImport.update({
+  id: '/audio/$',
+  path: '/audio/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandSplatRoute = BrandSplatRouteImport.update({
+  id: '/brand/$',
+  path: '/brand/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogsSplatRoute = CatalogsSplatRouteImport.update({
+  id: '/catalogs/$',
+  path: '/catalogs/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsACTESWindowsX64DotzipRoute =
+  DownloadsACTESWindowsX64DotzipRouteImport.update({
+    id: '/downloads_/ACTES-windows-x64.zip',
+    path: '/downloads/ACTES-windows-x64.zip',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FontsSplatRoute = FontsSplatRouteImport.update({
+  id: '/fonts/$',
+  path: '/fonts/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaSplatRoute = MediaSplatRouteImport.update({
+  id: '/media/$',
+  path: '/media/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideosSplatRoute = VideosSplatRouteImport.update({
+  id: '/videos/$',
+  path: '/videos/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicOrdersRoute = ApiPublicOrdersRouteImport.update({
+  id: '/api/public/orders',
+  path: '/api/public/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicWaInvoiceRoute = ApiPublicWaInvoiceRouteImport.update({
+  id: '/api/public/wa-invoice',
+  path: '/api/public/wa-invoice',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/downloads': typeof DownloadsRoute
+  '/hithium': typeof HithiumRoute
+  '/lipower': typeof LipowerRoute
+  '/pylontech': typeof PylontechRoute
+  '/suntech': typeof SuntechRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
+  '/api/public/orders': typeof ApiPublicOrdersRoute
+  '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/downloads': typeof DownloadsRoute
+  '/hithium': typeof HithiumRoute
+  '/lipower': typeof LipowerRoute
+  '/pylontech': typeof PylontechRoute
+  '/suntech': typeof SuntechRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
+  '/api/public/orders': typeof ApiPublicOrdersRoute
+  '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/downloads': typeof DownloadsRoute
+  '/hithium': typeof HithiumRoute
+  '/lipower': typeof LipowerRoute
+  '/pylontech': typeof PylontechRoute
+  '/suntech': typeof SuntechRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/audio/$': typeof AudioSplatRoute
+  '/brand/$': typeof BrandSplatRoute
+  '/catalogs/$': typeof CatalogsSplatRoute
+  '/downloads_/ACTES-windows-x64.zip': typeof DownloadsACTESWindowsX64DotzipRoute
+  '/fonts/$': typeof FontsSplatRoute
+  '/media/$': typeof MediaSplatRoute
+  '/videos/$': typeof VideosSplatRoute
+  '/api/public/orders': typeof ApiPublicOrdersRoute
+  '/api/public/wa-invoice': typeof ApiPublicWaInvoiceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/downloads'
+    | '/hithium'
+    | '/lipower'
+    | '/pylontech'
+    | '/suntech'
+    | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads/ACTES-windows-x64.zip'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
+    | '/api/public/orders'
+    | '/api/public/wa-invoice'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/downloads'
+    | '/hithium'
+    | '/lipower'
+    | '/pylontech'
+    | '/suntech'
+    | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads/ACTES-windows-x64.zip'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
+    | '/api/public/orders'
+    | '/api/public/wa-invoice'
+  id:
+    | '__root__'
+    | '/'
+    | '/downloads'
+    | '/hithium'
+    | '/lipower'
+    | '/pylontech'
+    | '/suntech'
+    | '/api/tts'
+    | '/audio/$'
+    | '/brand/$'
+    | '/catalogs/$'
+    | '/downloads_/ACTES-windows-x64.zip'
+    | '/fonts/$'
+    | '/media/$'
+    | '/videos/$'
+    | '/api/public/orders'
+    | '/api/public/wa-invoice'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DownloadsRoute: typeof DownloadsRoute
+  HithiumRoute: typeof HithiumRoute
+  LipowerRoute: typeof LipowerRoute
+  PylontechRoute: typeof PylontechRoute
+  SuntechRoute: typeof SuntechRoute
+  ApiTtsRoute: typeof ApiTtsRoute
+  AudioSplatRoute: typeof AudioSplatRoute
+  BrandSplatRoute: typeof BrandSplatRoute
+  CatalogsSplatRoute: typeof CatalogsSplatRoute
+  DownloadsACTESWindowsX64DotzipRoute: typeof DownloadsACTESWindowsX64DotzipRoute
+  FontsSplatRoute: typeof FontsSplatRoute
+  MediaSplatRoute: typeof MediaSplatRoute
+  VideosSplatRoute: typeof VideosSplatRoute
+  ApiPublicOrdersRoute: typeof ApiPublicOrdersRoute
+  ApiPublicWaInvoiceRoute: typeof ApiPublicWaInvoiceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +248,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hithium': {
+      id: '/hithium'
+      path: '/hithium'
+      fullPath: '/hithium'
+      preLoaderRoute: typeof HithiumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lipower': {
+      id: '/lipower'
+      path: '/lipower'
+      fullPath: '/lipower'
+      preLoaderRoute: typeof LipowerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pylontech': {
+      id: '/pylontech'
+      path: '/pylontech'
+      fullPath: '/pylontech'
+      preLoaderRoute: typeof PylontechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suntech': {
+      id: '/suntech'
+      path: '/suntech'
+      fullPath: '/suntech'
+      preLoaderRoute: typeof SuntechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tts': {
+      id: '/api/tts'
+      path: '/api/tts'
+      fullPath: '/api/tts'
+      preLoaderRoute: typeof ApiTtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audio/$': {
+      id: '/audio/$'
+      path: '/audio/$'
+      fullPath: '/audio/$'
+      preLoaderRoute: typeof AudioSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand/$': {
+      id: '/brand/$'
+      path: '/brand/$'
+      fullPath: '/brand/$'
+      preLoaderRoute: typeof BrandSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogs/$': {
+      id: '/catalogs/$'
+      path: '/catalogs/$'
+      fullPath: '/catalogs/$'
+      preLoaderRoute: typeof CatalogsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads_/ACTES-windows-x64.zip': {
+      id: '/downloads_/ACTES-windows-x64.zip'
+      path: '/downloads/ACTES-windows-x64.zip'
+      fullPath: '/downloads/ACTES-windows-x64.zip'
+      preLoaderRoute: typeof DownloadsACTESWindowsX64DotzipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fonts/$': {
+      id: '/fonts/$'
+      path: '/fonts/$'
+      fullPath: '/fonts/$'
+      preLoaderRoute: typeof FontsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/$': {
+      id: '/media/$'
+      path: '/media/$'
+      fullPath: '/media/$'
+      preLoaderRoute: typeof MediaSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videos/$': {
+      id: '/videos/$'
+      path: '/videos/$'
+      fullPath: '/videos/$'
+      preLoaderRoute: typeof VideosSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/orders': {
+      id: '/api/public/orders'
+      path: '/api/public/orders'
+      fullPath: '/api/public/orders'
+      preLoaderRoute: typeof ApiPublicOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/wa-invoice': {
+      id: '/api/public/wa-invoice'
+      path: '/api/public/wa-invoice'
+      fullPath: '/api/public/wa-invoice'
+      preLoaderRoute: typeof ApiPublicWaInvoiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DownloadsRoute: DownloadsRoute,
+  HithiumRoute: HithiumRoute,
+  LipowerRoute: LipowerRoute,
+  PylontechRoute: PylontechRoute,
+  SuntechRoute: SuntechRoute,
+  ApiTtsRoute: ApiTtsRoute,
+  AudioSplatRoute: AudioSplatRoute,
+  BrandSplatRoute: BrandSplatRoute,
+  CatalogsSplatRoute: CatalogsSplatRoute,
+  DownloadsACTESWindowsX64DotzipRoute: DownloadsACTESWindowsX64DotzipRoute,
+  FontsSplatRoute: FontsSplatRoute,
+  MediaSplatRoute: MediaSplatRoute,
+  VideosSplatRoute: VideosSplatRoute,
+  ApiPublicOrdersRoute: ApiPublicOrdersRoute,
+  ApiPublicWaInvoiceRoute: ApiPublicWaInvoiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
