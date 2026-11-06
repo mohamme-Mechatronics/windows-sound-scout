@@ -193,7 +193,17 @@ async function loadAudio(text: string, lang: Lang, background = false) {
 
   // الأصوات الجاهزة المحفوظة داخل التطبيق تعمل بدون إنترنت.
   const local = await staticAudio(text, lang);
-  if (local) return local;
+  if (local) {
+    try {
+      const response = await fetch(local);
+      if (response.ok) {
+        const blob = await response.blob();
+        await store?.put(req, new Response(blob.slice(0, blob.size, blob.type)));
+        return URL.createObjectURL(blob);
+      }
+    } catch { /* Keep the original source as a fallback. */ }
+    return local;
+  }
 
   // Background preparation must not flood paid speech generation or compete
   // with the user's current screen. Generate missing phrases on demand only.
